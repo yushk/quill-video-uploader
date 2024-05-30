@@ -1,14 +1,14 @@
 import Quill from "quill";
-import ImageUploader from "./quill.imageUploader.js";
+import VideoUploader from "./quill.videoUploader.js";
 
 Quill.debug("warn");
-Quill.register("modules/imageUploader", ImageUploader);
+Quill.register("modules/VideoUploader", VideoUploader);
 
 const fullToolbarOptions = [
     [{ header: [1, 2, 3, false] }],
     ["bold", "italic"],
     ["clean"],
-    ["image"],
+    ["video"],
 ];
 var quill = new Quill("#editor", {
     theme: "snow",
@@ -16,7 +16,7 @@ var quill = new Quill("#editor", {
         toolbar: {
             container: fullToolbarOptions,
         },
-        imageUploader: {
+        VideoUploader: {
             upload: (file) => {
                 const fileReader = new FileReader();
                 return new Promise((resolve, reject) => {

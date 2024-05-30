@@ -1,6 +1,6 @@
 import LoadingImage from "./blots/image.js";
 
-class ImageUploader {
+class VideoUploader {
     constructor(quill, options) {
         this.quill = quill;
         this.options = options;
@@ -14,7 +14,7 @@ class ImageUploader {
 
         var toolbar = this.quill.getModule("toolbar");
         if (toolbar) {
-            toolbar.addHandler("image", this.selectLocalImage.bind(this));
+            toolbar.addHandler("video", this.selectLocalImage.bind(this));
         }
 
         this.handleDrop = this.handleDrop.bind(this);
@@ -29,7 +29,7 @@ class ImageUploader {
         this.range = this.quill.getSelection();
         this.fileHolder = document.createElement("input");
         this.fileHolder.setAttribute("type", "file");
-        this.fileHolder.setAttribute("accept", "image/*");
+        this.fileHolder.setAttribute("accept", "video/mp4,video/x-m4v,video/*");
         this.fileHolder.setAttribute("style", "visibility:hidden");
 
         this.fileHolder.onchange = this.fileChanged.bind(this);
@@ -170,7 +170,7 @@ class ImageUploader {
         // Delete the placeholder image
         this.quill.deleteText(range.index, lengthToDelete, "user");
         // Insert the server saved image
-        this.quill.insertEmbed(range.index, "image", `${url}`, "user");
+        this.quill.insertEmbed(range.index, "video", `${url}`, "user");
 
         range.index++;
         this.quill.setSelection(range, "user");
@@ -194,5 +194,5 @@ class ImageUploader {
     }
 }
 
-window.ImageUploader = ImageUploader;
-export default ImageUploader;
+window.VideoUploader = VideoUploader;
+export default VideoUploader;

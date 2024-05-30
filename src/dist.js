@@ -1,3 +1,3 @@
-export { default } from "./quill.imageUploader";
+export { default } from "./quill.videoUploader";
 
-import "./quill.imageUploader.css";
+import "./quill.videoUploader.css";

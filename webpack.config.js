@@ -1,10 +1,9 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = [{
     entry: {
-        "quill.imageUploader": "./src/dist.js",
+        "quill.videoUploader": "./src/dist.js",
         demo: "./src/demo.js",
     },
     output: {
@@ -37,13 +36,10 @@ module.exports = [{
         ],
     },
     module: {
-        rules: [{
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: "css-loader",
-                    }, ],
-                }),
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.js$/,
@@ -54,5 +50,5 @@ module.exports = [{
             },
         ],
     },
-    plugins: [new ExtractTextPlugin("quill.imageUploader.min.css")],
+    plugins: [new MiniCssExtractPlugin({filename:"quill.videoUploader.min.css"})],
 }, ];

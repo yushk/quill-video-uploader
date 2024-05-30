@@ -19,17 +19,17 @@ npm install quill-image-uploader --save
 
 ```javascript
 import Quill from "quill";
-import ImageUploader from "quill-image-uploader";
+import VideoUploader from "quill-image-uploader";
 
-import 'quill-image-uploader/dist/quill.imageUploader.min.css';
+import 'quill-image-uploader/dist/quill.VideoUploader.min.css';
 
-Quill.register("modules/imageUploader", ImageUploader);
+Quill.register("modules/VideoUploader", VideoUploader);
 
 const quill = new Quill(editor, {
   // ...
   modules: {
     // ...
-    imageUploader: {
+    VideoUploader: {
       upload: (file) => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
@@ -55,15 +55,15 @@ Example on [CodeSandbox](https://codesandbox.io/s/mutable-tdd-lrsvh)
 ```javascript
 // A link to quill.js
 <script src="/dist/quill.js"></script>
-<script src="/dist/quill.imageUploader.min.js"></script>
+<script src="/dist/quill.VideoUploader.min.js"></script>
 
-Quill.register("modules/imageUploader", ImageUploader);
+Quill.register("modules/VideoUploader", VideoUploader);
 
 var quill = new Quill(editor, {
   // ...
   modules: {
     // ...
-    imageUploader: {
+    VideoUploader: {
       upload: file => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
