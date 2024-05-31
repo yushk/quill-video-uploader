@@ -1,6 +1,6 @@
 {
     "name": "quill-video-uploader",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": "https://github.com/yushk/quill-video-uploader.git",
     "description": "A module for Quill rich text editor to allow video to be uploaded to a server instead of being base64 encoded",
     "main": "src/quill.videoUploader.js",

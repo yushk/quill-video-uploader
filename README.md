@@ -1,4 +1,4 @@
-# Quill ImageHandler Module
+# Quill VideoHandler Module
 
 A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded.
 Adds a button to the toolbar for users to click, also handles drag,dropped and pasted images.
@@ -12,16 +12,16 @@ Adds a button to the toolbar for users to click, also handles drag,dropped and p
 Install with npm:
 
 ```bash
-npm install quill-image-uploader --save
+npm install quill-video-uploader --save
 ```
 
 ### Webpack/ES6
 
 ```javascript
 import Quill from "quill";
-import VideoUploader from "quill-image-uploader";
+import VideoUploader from "quill-video-uploader";
 
-import 'quill-image-uploader/dist/quill.VideoUploader.min.css';
+import 'quill-video-uploader/dist/quill.VideoUploader.min.css';
 
 Quill.register("modules/VideoUploader", VideoUploader);
 
@@ -44,13 +44,6 @@ const quill = new Quill(editor, {
 });
 ```
 
-### Quickstart (React with react-quill)
-
-React Example on [CodeSandbox](https://codesandbox.io/s/react-quill-demo-qr8xd)
-
-### Quickstart (script tag)
-
-Example on [CodeSandbox](https://codesandbox.io/s/mutable-tdd-lrsvh)
 
 ```javascript
 // A link to quill.js
